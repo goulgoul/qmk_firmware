@@ -27,7 +27,7 @@ enum combos
     IO_BDW,
     KL_BSPC,
     JI_AIGU,
-    UK_GRAVE,
+    JCOMM_GRAVE,
     UI_CIRC,
     JK_TREMA,
     KM_SEDILLE
@@ -50,7 +50,7 @@ const uint16_t PROGMEM comboIO[] = { KC_I, KC_O, COMBO_END };
 const uint16_t PROGMEM comboKL[] = { RSFT_T(KC_K), RALT_T(KC_L), COMBO_END };
 
 const uint16_t PROGMEM comboJI[] = { RCTL_T(KC_J), KC_I, COMBO_END };
-const uint16_t PROGMEM comboUK[] = { KC_U, RSFT_T(KC_K), COMBO_END };
+const uint16_t PROGMEM comboJCOMM[] = { RCTL_T(KC_J), KC_COMM, COMBO_END };
 const uint16_t PROGMEM comboUI[] = { KC_U, KC_I, COMBO_END };
 const uint16_t PROGMEM comboJK[] = { RCTL_T(KC_J), RSFT_T(KC_K), COMBO_END };
 
@@ -62,7 +62,7 @@ combo_t key_combos[] = {
     [IO_BDW] = COMBO(comboIO, BKWD_DEL_WD),
     [KL_BSPC] = COMBO(comboKL, KC_BSPC),
     [JI_AIGU] = COMBO(comboJI, ACC_AIGU),
-    [UK_GRAVE] = COMBO(comboUK, ACC_GRAVE),
+    [JCOMM_GRAVE] = COMBO(comboJCOMM, ACC_GRAVE),
     [UI_CIRC] = COMBO(comboUI, ACC_TREMA),
     [JK_TREMA] = COMBO(comboJK, ACC_CIRC),
     [KM_SEDILLE] = COMBO(comboKM, ACC_SEDILLE)
