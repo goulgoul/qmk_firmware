@@ -29,7 +29,8 @@ enum combos
     JI_AIGU,
     UK_GRAVE,
     UI_CIRC,
-    JK_TREMA
+    JK_TREMA,
+    KM_SEDILLE
 };
 
 
@@ -38,19 +39,22 @@ enum custom_keycodes
     BKWD_DEL_WD = SAFE_RANGE,
     ACC_AIGU,
     ACC_GRAVE,
+    ACC_TREMA,
     ACC_CIRC,
-    ACC_TREMA
+    ACC_SEDILLE
 };
 
 const uint16_t PROGMEM comboWE[] = { KC_W, KC_E, COMBO_END };
-const uint16_t PROGMEM comboSD[] = { KC_S, KC_D, COMBO_END };
+const uint16_t PROGMEM comboSD[] = { LALT_T(KC_S), LSFT_T(KC_D), COMBO_END };
 const uint16_t PROGMEM comboIO[] = { KC_I, KC_O, COMBO_END };
-const uint16_t PROGMEM comboKL[] = { KC_K, KC_L, COMBO_END };
+const uint16_t PROGMEM comboKL[] = { RSFT_T(KC_K), RALT_T(KC_L), COMBO_END };
 
-const uint16_t PROGMEM comboJI[] = { KC_J, KC_I, COMBO_END };
-const uint16_t PROGMEM comboUK[] = { KC_U, KC_K, COMBO_END };
+const uint16_t PROGMEM comboJI[] = { RCTL_T(KC_J), KC_I, COMBO_END };
+const uint16_t PROGMEM comboUK[] = { KC_U, RSFT_T(KC_K), COMBO_END };
 const uint16_t PROGMEM comboUI[] = { KC_U, KC_I, COMBO_END };
-const uint16_t PROGMEM comboJK[] = { KC_J, KC_K, COMBO_END };
+const uint16_t PROGMEM comboJK[] = { RCTL_T(KC_J), RSFT_T(KC_K), COMBO_END };
+
+const uint16_t PROGMEM comboKM[] = { RSFT_T(KC_K), KC_M, COMBO_END };
 
 combo_t key_combos[] = {
     [WE_ESC] = COMBO(comboWE, KC_ESC),
@@ -59,8 +63,9 @@ combo_t key_combos[] = {
     [KL_BSPC] = COMBO(comboKL, KC_BSPC),
     [JI_AIGU] = COMBO(comboJI, ACC_AIGU),
     [UK_GRAVE] = COMBO(comboUK, ACC_GRAVE),
-    [UI_CIRC] = COMBO(comboUI, ACC_CIRC),
-    [JK_TREMA] = COMBO(comboJK, ACC_TREMA)
+    [UI_CIRC] = COMBO(comboUI, ACC_TREMA),
+    [JK_TREMA] = COMBO(comboJK, ACC_CIRC),
+    [KM_SEDILLE] = COMBO(comboKM, ACC_SEDILLE)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -80,23 +85,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
         XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      TO(5),        KC_PAST, KC_P7,      KC_P8,        KC_P9,        KC_PPLS,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        KC_ESC,      XXXXXXX,      KC_TAB,       BKWD_DEL_WD,  KC_BSPC,      KC_PSLS, KC_P4,      KC_P5,        KC_P6,        KC_PMNS,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_PSLS, KC_P4,      KC_P5,        KC_P6,        KC_PMNS,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        KC_LCTL,     XXXXXXX,      XXXXXXX,      KC_LALT,      KC_DEL,       KC_P0,   KC_P1,       KC_P2,        KC_P3,        KC_PDOT,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_P0,   KC_P1,      KC_P2,        KC_P3,        KC_PDOT,
 //     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|-------+-------|     |-------+-------|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
                                                        _______, KC_SPC,      XXXXXXX, TO(4)
 //                                                    `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
     ),
     [SYMBOLS] = LAYOUT_split_3x5_2(
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        KC_TILD,     KC_GRV,       KC_AMPR,      KC_EXLM,      KC_LCBR,      KC_RCBR, KC_BSLS,    KC_PIPE,      KC_PERC,      KC_PLUS,
+        KC_TILD,     KC_GRV,       KC_AMPR,      KC_EXLM,      KC_LBRC,      KC_RBRC, KC_BSLS,    KC_PIPE,      KC_PERC,      KC_PLUS,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
         KC_ASTR,     KC_CIRC,      KC_SCLN,      KC_COLN,      KC_LPRN,      KC_RPRN, KC_PMNS,    KC_UNDS,      KC_DLR,       KC_EQL,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        KC_ESC,      KC_HOME,      KC_TAB,       KC_AT,        KC_LBRC,      KC_RBRC, KC_BSPC,    KC_DEL,       KC_END,       KC_HASH,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      KC_AT,        KC_LCBR,      KC_RCBR, KC_HASH,    XXXXXXX,      XXXXXXX,      XXXXXXX,
 //     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|-------+-------|     |-------+-------|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
-                                                       TO(0),  KC_SPC,       KC_ENT, TO(3)),
+                                                       TO(0),  KC_SPC,       KC_ENT, TO(3)
 //                                                    `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
+    ),
     [VIM] = LAYOUT_split_3x5_2(
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
         KC_Q,        KC_W,         KC_E,         KC_R,         KC_T,         KC_PERC, KC_RCBR,    KC_LCBR,      KC_O,         KC_P,
@@ -134,30 +140,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
-    if (record->event.pressed)
+    switch (keycode)
     {
-        switch (keycode)
-        {
-            case BKWD_DEL_WD:
+        case BKWD_DEL_WD:
+            if (record->event.pressed)
                 SEND_STRING(SS_LCTL("\b"));
-                return false;
+            return false;
 
-            case ACC_AIGU:
+        case ACC_AIGU:
+            if (record->event.pressed)
                 SEND_STRING(SS_RALT("'"));
-                return false;
+            return false;
 
-            case ACC_GRAVE:
+        case ACC_GRAVE:
+            if (record->event.pressed)
                 SEND_STRING(SS_RALT("`"));
-                return false;
+            return false;
 
-            case ACC_CIRC:
+        case ACC_CIRC:
+            if (record->event.pressed)
                 SEND_STRING(SS_RALT("^"));
-                return false;
+            return false;
 
-            case ACC_TREMA:
+        case ACC_TREMA:
+            if (record->event.pressed)
                 SEND_STRING(SS_RALT("\""));
-                return false;
-        }
+            return false;
+
+        case ACC_SEDILLE:
+            if (record->event.pressed)
+                SEND_STRING(SS_RALT(","));
+            return false;
     }
 
     return true;
