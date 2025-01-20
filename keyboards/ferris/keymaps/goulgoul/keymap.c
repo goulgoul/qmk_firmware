@@ -60,8 +60,8 @@ enum combos
 combo_t key_combos[] = {
     [_ESC] = COMBO(comboWE, KC_ESC),
     [_TAB] = COMBO(comboSD, KC_TAB),
-    [_BDW] = COMBO(comboKL, BKWD_DEL_WD),
-    [_BSPC] = COMBO(comboIO, KC_BSPC),
+    [_BDW] = COMBO(comboIO, BKWD_DEL_WD),
+    [_BSPC] = COMBO(comboKL, KC_BSPC),
     [_AIGU] = COMBO(comboJI, ACC_AIGU),
     [_GRAVE] = COMBO(comboJCOMM, ACC_GRAVE),
     [_CIRC] = COMBO(comboUI, ACC_TREMA),
