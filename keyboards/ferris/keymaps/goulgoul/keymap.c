@@ -20,18 +20,6 @@ enum layers
     GAMES
 };
 
-enum combos
-{
-    WE_ESC,
-    SD_TAB,
-    IO_BDW,
-    KL_BSPC,
-    JI_AIGU,
-    JCOMM_GRAVE,
-    UI_CIRC,
-    JK_TREMA,
-    KM_SEDILLE
-};
 
 
 enum custom_keycodes
@@ -56,16 +44,29 @@ const uint16_t PROGMEM comboJK[] = { RCTL_T(KC_J), RSFT_T(KC_K), COMBO_END };
 
 const uint16_t PROGMEM comboKM[] = { RSFT_T(KC_K), KC_M, COMBO_END };
 
+enum combos
+{
+    _ESC,
+    _TAB,
+    _BDW,
+    _BSPC,
+    _AIGU,
+    _GRAVE,
+    _CIRC,
+    _TREMA,
+    _SEDILLE
+};
+
 combo_t key_combos[] = {
-    [WE_ESC] = COMBO(comboWE, KC_ESC),
-    [SD_TAB] = COMBO(comboSD, KC_TAB),
-    [IO_BDW] = COMBO(comboIO, BKWD_DEL_WD),
-    [KL_BSPC] = COMBO(comboKL, KC_BSPC),
-    [JI_AIGU] = COMBO(comboJI, ACC_AIGU),
-    [JCOMM_GRAVE] = COMBO(comboJCOMM, ACC_GRAVE),
-    [UI_CIRC] = COMBO(comboUI, ACC_TREMA),
-    [JK_TREMA] = COMBO(comboJK, ACC_CIRC),
-    [KM_SEDILLE] = COMBO(comboKM, ACC_SEDILLE)
+    [_ESC] = COMBO(comboWE, KC_ESC),
+    [_TAB] = COMBO(comboSD, KC_TAB),
+    [_BDW] = COMBO(comboKL, BKWD_DEL_WD),
+    [_BSPC] = COMBO(comboIO, KC_BSPC),
+    [_AIGU] = COMBO(comboJI, ACC_AIGU),
+    [_GRAVE] = COMBO(comboJCOMM, ACC_GRAVE),
+    [_CIRC] = COMBO(comboUI, ACC_TREMA),
+    [_TREMA] = COMBO(comboJK, ACC_CIRC),
+    [_SEDILLE] = COMBO(comboKM, ACC_SEDILLE)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
