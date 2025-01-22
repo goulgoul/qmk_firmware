@@ -95,11 +95,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [SYMBOLS] = LAYOUT_split_3x5_2(
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        KC_TILD,     KC_GRV,       KC_AMPR,      KC_EXLM,      KC_LBRC,      KC_RBRC, KC_BSLS,    KC_PIPE,      KC_PERC,      KC_PLUS,
+        KC_TILD,     KC_GRV,       KC_AMPR,      KC_EXLM,      KC_LCBR,      KC_RCBR, KC_BSLS,    KC_PIPE,      KC_PERC,      KC_PLUS,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
         KC_ASTR,     KC_CIRC,      KC_SCLN,      KC_COLN,      KC_LPRN,      KC_RPRN, KC_PMNS,    KC_UNDS,      KC_DLR,       KC_EQL,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        XXXXXXX,     XXXXXXX,      XXXXXXX,      KC_AT,        KC_LCBR,      KC_RCBR, KC_HASH,    XXXXXXX,      XXXXXXX,      XXXXXXX,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      KC_AT,        KC_LBRC,      KC_RBRC, KC_HASH,    XXXXXXX,      XXXXXXX,      XXXXXXX,
 //     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|-------+-------|     |-------+-------|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
                                                        TO(0),  KC_SPC,       KC_ENT, TO(3)
 //                                                    `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
