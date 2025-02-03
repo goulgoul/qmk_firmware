@@ -36,6 +36,7 @@ const uint16_t PROGMEM comboWE[] = { KC_W, KC_E, COMBO_END };
 const uint16_t PROGMEM comboSD[] = { LALT_T(KC_S), LSFT_T(KC_D), COMBO_END };
 const uint16_t PROGMEM comboIO[] = { KC_I, KC_O, COMBO_END };
 const uint16_t PROGMEM comboKL[] = { RSFT_T(KC_K), RALT_T(KC_L), COMBO_END };
+const uint16_t PROGMEM comboCOMMDOT[] = { KC_COMM, KC_DOT, COMBO_END };
 
 const uint16_t PROGMEM comboJI[] = { RCTL_T(KC_J), KC_I, COMBO_END };
 const uint16_t PROGMEM comboJCOMM[] = { RCTL_T(KC_J), KC_COMM, COMBO_END };
@@ -50,6 +51,7 @@ enum combos
     _TAB,
     _BDW,
     _BSPC,
+    _DEL,
     _AIGU,
     _GRAVE,
     _CIRC,
@@ -62,6 +64,7 @@ combo_t key_combos[] = {
     [_TAB] = COMBO(comboSD, KC_TAB),
     [_BDW] = COMBO(comboIO, BKWD_DEL_WD),
     [_BSPC] = COMBO(comboKL, KC_BSPC),
+    [_DEL] = COMBO(comboCOMMDOT, KC_DEL),
     [_AIGU] = COMBO(comboJI, ACC_AIGU),
     [_GRAVE] = COMBO(comboJCOMM, ACC_GRAVE),
     [_CIRC] = COMBO(comboUI, ACC_TREMA),
@@ -77,18 +80,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D), LCTL_T(KC_F), KC_G,        KC_H,  RCTL_T(KC_J), RSFT_T(KC_K), RALT_T(KC_L), RGUI_T(KC_QUOT),
 //     |------------+-------------+-------------+-------------+-------|     |------+------------+-------------+-------------+----------------|
         KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,        KC_N,  KC_M,        KC_COMM,      KC_DOT,       KC_SLSH,
-//     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|-----+--------|     |------+--------|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
+//     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|------;-------|     |------+--------|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
                                                         OSL(1), KC_SPC,      KC_ENT, OSL(2)
 //                                                     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨´     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
     ),
 
     [UTILS_AND_NUMPAD] = LAYOUT_split_3x5_2(
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      TO(5),        KC_PAST, KC_P7,      KC_P8,        KC_P9,        KC_PPLS,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      TO(5),        KC_PAST, KC_7,      KC_8,        KC_9,        KC_PPLS,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_PSLS, KC_P4,      KC_P5,        KC_P6,        KC_PMNS,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_PSLS, KC_4,      KC_5,        KC_6,        KC_PMNS,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_P0,   KC_P1,      KC_P2,        KC_P3,        KC_PDOT,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      KC_0,    KC_1,      KC_2,        KC_3,        KC_PDOT,
 //     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|-------+-------|     |-------+-------|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
                                                        TO(0),   KC_SPC,      XXXXXXX, TO(4)
 //                                                    `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
