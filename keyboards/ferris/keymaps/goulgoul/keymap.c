@@ -36,7 +36,6 @@ const uint16_t PROGMEM comboWE[] = { KC_W, KC_E, COMBO_END };
 const uint16_t PROGMEM comboSD[] = { LALT_T(KC_S), LSFT_T(KC_D), COMBO_END };
 const uint16_t PROGMEM comboIO[] = { KC_I, KC_O, COMBO_END };
 const uint16_t PROGMEM comboKL[] = { RSFT_T(KC_K), RALT_T(KC_L), COMBO_END };
-const uint16_t PROGMEM comboCOMMDOT[] = { KC_COMM, KC_DOT, COMBO_END };
 
 const uint16_t PROGMEM comboJI[] = { RCTL_T(KC_J), KC_I, COMBO_END };
 const uint16_t PROGMEM comboJCOMM[] = { RCTL_T(KC_J), KC_COMM, COMBO_END };
@@ -51,7 +50,6 @@ enum combos
     _TAB,
     _BDW,
     _BSPC,
-    _DEL,
     _AIGU,
     _GRAVE,
     _CIRC,
@@ -64,7 +62,6 @@ combo_t key_combos[] = {
     [_TAB] = COMBO(comboSD, KC_TAB),
     [_BDW] = COMBO(comboIO, BKWD_DEL_WD),
     [_BSPC] = COMBO(comboKL, KC_BSPC),
-    [_DEL] = COMBO(comboCOMMDOT, KC_DEL),
     [_AIGU] = COMBO(comboJI, ACC_AIGU),
     [_GRAVE] = COMBO(comboJCOMM, ACC_GRAVE),
     [_CIRC] = COMBO(comboUI, ACC_TREMA),
@@ -100,9 +97,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
         KC_TILD,     KC_GRV,       KC_AMPR,      KC_EXLM,      KC_LCBR,      KC_RCBR, KC_BSLS,    KC_PIPE,      KC_PERC,      KC_PLUS,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        KC_ASTR,     KC_CIRC,      KC_SCLN,      KC_COLN,      KC_LPRN,      KC_RPRN, KC_PMNS,    KC_UNDS,      KC_DLR,       KC_EQL,
+        KC_ASTR,     KC_CIRC,      KC_COLN,      KC_SCLN,      KC_LPRN,      KC_RPRN, KC_PMNS,    KC_UNDS,      KC_DLR,       KC_EQL,
 //     |------------+-------------+-------------+-------------+-------|     |-------+------------+-------------+-------------+---------------|
-        XXXXXXX,     XXXXXXX,      XXXXXXX,      KC_AT,        KC_LBRC,      KC_RBRC, KC_HASH,    XXXXXXX,      XXXXXXX,      XXXXXXX,
+        XXXXXXX,     XXXXXXX,      XXXXXXX,      KC_AT,        KC_LBRC,      KC_RBRC, KC_HASH,    KC_LT,        KC_GT,        KC_QUES,
 //     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨|-------+-------|     |-------+-------|¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
                                                        TO(0),  KC_SPC,       KC_ENT, TO(3)
 //                                                    `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´     `¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨´
