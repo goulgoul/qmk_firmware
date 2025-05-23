@@ -1,26 +1,27 @@
 #include QMK_KEYBOARD_H
 
+// HOME ROW MODS
 #define HM_A    LGUI_T(KC_A)
-#define HM_S    LALT_T(KC_S)
-#define HM_D    LSFT_T(KC_D)
-#define HM_F    LCTL_T(KC_F)
+#define HM_R    LALT_T(KC_R)
+#define HM_S    LSFT_T(KC_S)
+#define HM_T    LCTL_T(KC_T)
 
-#define HM_J    RCTL_T(KC_J)
-#define HM_K    RSFT_T(KC_K)
-#define HM_L    RALT_T(KC_L)
-#define HM_QT   RGUI_T(KC_QUOT)
+#define HM_N    RCTL_T(KC_N)
+#define HM_E    RSFT_T(KC_E)
+#define HM_I    RALT_T(KC_I)
+#define HM_O    RGUI_T(KC_O)
 
-const uint16_t PROGMEM comboWE[]    = { KC_W, KC_E, COMBO_END };
-const uint16_t PROGMEM comboSD[]    = { HM_S, HM_D, COMBO_END };
-const uint16_t PROGMEM comboIO[]    = { KC_I, KC_O, COMBO_END };
-const uint16_t PROGMEM comboKL[]    = { HM_K, HM_L, COMBO_END };
+const uint16_t PROGMEM comboWF[]    = { KC_W, KC_F,     COMBO_END };
+const uint16_t PROGMEM comboRS[]    = { HM_R, HM_S,     COMBO_END };
+const uint16_t PROGMEM comboUY[]    = { KC_U, KC_Y,     COMBO_END };
+const uint16_t PROGMEM comboEI[]    = { HM_E, HM_I,     COMBO_END };
 
-const uint16_t PROGMEM comboJI[]    = { HM_J, KC_I, COMBO_END };
-const uint16_t PROGMEM comboJCOMM[] = { HM_J, KC_COMM, COMBO_END };
-const uint16_t PROGMEM comboUI[]    = { KC_U, KC_I, COMBO_END };
-const uint16_t PROGMEM comboJK[]    = { HM_J, HM_K, COMBO_END };
+const uint16_t PROGMEM comboNU[]    = { HM_N, KC_U,     COMBO_END };
+const uint16_t PROGMEM comboNCOMM[] = { HM_N, KC_COMM,  COMBO_END };
+const uint16_t PROGMEM comboLU[]    = { KC_L, KC_U,     COMBO_END };
+const uint16_t PROGMEM comboNE[]    = { HM_N, HM_E,     COMBO_END };
 
-const uint16_t PROGMEM comboKM[]    = { HM_K, KC_M, COMBO_END };
+const uint16_t PROGMEM comboEH[]    = { HM_E, KC_H,     COMBO_END };
 
 enum combos {
     _ESC,
@@ -42,23 +43,23 @@ enum custom_keycodes {
     ACC_CIRC,
     ACC_SEDILLE
 };
+
 combo_t key_combos[] = {
-    [_ESC] = COMBO(comboWE, KC_ESC),
-    [_TAB] = COMBO(comboSD, KC_TAB),
-    [_BDW] = COMBO(comboIO, BKWD_DEL_WD),
-    [_BSPC] = COMBO(comboKL, KC_BSPC),
-    [_AIGU] = COMBO(comboJI, ACC_AIGU),
-    [_GRAVE] = COMBO(comboJCOMM, ACC_GRAVE),
-    [_CIRC] = COMBO(comboUI, ACC_TREMA),
-    [_TREMA] = COMBO(comboJK, ACC_CIRC),
-    [_SEDILLE] = COMBO(comboKM, ACC_SEDILLE)
+    [_ESC]      = COMBO(comboWF,    KC_ESC),
+    [_TAB]      = COMBO(comboRS,    KC_TAB),
+    [_BDW]      = COMBO(comboUY,    BKWD_DEL_WD),
+    [_BSPC]     = COMBO(comboEI,    KC_BSPC),
+    [_AIGU]     = COMBO(comboNU,    ACC_AIGU),
+    [_GRAVE]    = COMBO(comboNCOMM, ACC_GRAVE),
+    [_CIRC]     = COMBO(comboLU,    ACC_TREMA),
+    [_TREMA]    = COMBO(comboNE,    ACC_CIRC),
+    [_SEDILLE]  = COMBO(comboEH,    ACC_SEDILLE)
 };
 
 enum layers {
-    BASE,
-    UTILS_AND_NUMPAD,
+    COLEMAK_DH,
     SYMBOLS,
-    VIM,
-    FUNCTIONS,
+    NUMPAD_AND_VIM,
+    FUNCTIONS
 };
 
