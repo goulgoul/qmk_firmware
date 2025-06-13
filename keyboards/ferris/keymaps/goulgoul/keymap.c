@@ -24,11 +24,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [NUMPAD_AND_VIM] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_PAST, KC_7,    KC_8,    KC_9,    KC_PPLS,          KC_PERC, WS_LEFT, WS_RIGHT, KC_O,    KC_P,
+        XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX,          KC_PERC, WS_LEFT, WS_RIGHT, KC_O,    KC_P,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_PSLS, KC_4,    KC_5,    KC_6,    KC_PMNS,          KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_COLN,
+        XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX,          KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_COLN,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_0,    KC_1,    KC_2,    KC_3,    KC_PDOT,          KC_CIRC, W_LEFT,  W_RIGHT, KC_DLR,  KC_SLSH,
+        KC_0,    KC_1,    KC_2,    KC_3,    XXXXXXX,          KC_CIRC, W_LEFT,  W_RIGHT, KC_DLR,  KC_SLSH,
 //                                |--------+--------|        |--------+--------|
                                    TO(0),   KC_SPC,           XXXXXXX, TO(3)
     )
