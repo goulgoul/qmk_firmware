@@ -1,3 +1,4 @@
+/**/
 #include QMK_KEYBOARD_H
 
 // HOME ROW MODS
@@ -41,8 +42,22 @@ enum custom_keycodes {
     ACC_GRAVE,
     ACC_TREMA,
     ACC_CIRC,
-    ACC_SEDILLE
+    ACC_SEDILLE,
+    WS_LEFT,
+    WS_RIGHT,
+    W_LEFT,
+    W_RIGHT
 };
+
+#define W_LEFT_STR SS_DOWN(X_LEFT_GUI) \
+                   SS_DOWN(X_LEFT)     \
+                   SS_UP(X_LEFT)       \
+                   SS_UP(X_LEFT_GUI)
+
+#define W_RIGHT_STR SS_DOWN(X_LEFT_GUI) \
+                    SS_DOWN(X_RIGHT)     \
+                    SS_UP(X_RIGHT)       \
+                    SS_UP(X_LEFT_GUI)
 
 combo_t key_combos[] = {
     [_ESC]      = COMBO(comboWF,    KC_ESC),
@@ -60,6 +75,5 @@ enum layers {
     COLEMAK_DH,
     SYMBOLS,
     NUMPAD_AND_VIM,
-    FUNCTIONS
 };
 
