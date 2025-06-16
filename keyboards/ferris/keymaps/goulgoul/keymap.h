@@ -44,9 +44,9 @@ enum custom_keycodes {
     ACC_CIRC,
     ACC_SEDILLE,
     WS_LEFT,
-    WS_RIGHT,
+    WS_RGHT,
     W_LEFT,
-    W_RIGHT
+    W_RGHT
 };
 
 #define W_LEFT_STR SS_DOWN(X_LEFT_GUI) \

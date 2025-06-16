@@ -24,11 +24,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [NUMPAD_AND_VIM] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX,          KC_PERC, WS_LEFT, WS_RIGHT, KC_O,    KC_P,
+        XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX,          KC_HOME, WS_LEFT, WS_RGHT, KC_END,  KC_PGUP,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX,          KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_COLN,
+        XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX,          KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PGDN,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_0,    KC_1,    KC_2,    KC_3,    XXXXXXX,          KC_CIRC, W_LEFT,  W_RIGHT, KC_DLR,  KC_SLSH,
+        KC_0,    KC_1,    KC_2,    KC_3,    XXXXXXX,          KC_CIRC, W_LEFT,  W_RGHT,  KC_DLR,  KC_SLSH,
 //                                |--------+--------|        |--------+--------|
                                    TO(0),   KC_SPC,           XXXXXXX, TO(3)
     )
@@ -71,7 +71,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(W_LEFT_STR);
             return false;
 
-        case W_RIGHT:
+        case W_RGHT:
             if (record->event.pressed)
                 SEND_STRING(W_RIGHT_STR);
             return false;
@@ -81,7 +81,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LCTL(W_LEFT_STR));
             return false;
 
-        case WS_RIGHT:
+        case WS_RGHT:
             if (record->event.pressed)
                 SEND_STRING(SS_LCTL(W_RIGHT_STR));
             return false;
