@@ -46,18 +46,15 @@ enum custom_keycodes {
     WS_LEFT,
     WS_RGHT,
     W_LEFT,
+    W_DOWN,
+    W_UP,
     W_RGHT
 };
 
-#define W_LEFT_STR SS_DOWN(X_LEFT_GUI) \
-                   SS_DOWN(X_LEFT)     \
-                   SS_UP(X_LEFT)       \
-                   SS_UP(X_LEFT_GUI)
-
-#define W_RIGHT_STR SS_DOWN(X_LEFT_GUI) \
-                    SS_DOWN(X_RIGHT)     \
-                    SS_UP(X_RIGHT)       \
-                    SS_UP(X_LEFT_GUI)
+#define W_STR(dir_key) SS_DOWN(X_LEFT_GUI) \
+                       SS_DOWN(dir_key)    \
+                       SS_UP(dir_key)      \
+                       SS_UP(X_LEFT_GUI)
 
 combo_t key_combos[] = {
     [_ESC]      = COMBO(comboWF,    KC_ESC),
