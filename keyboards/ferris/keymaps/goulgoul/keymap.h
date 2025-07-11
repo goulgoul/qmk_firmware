@@ -15,7 +15,8 @@
 const uint16_t PROGMEM comboWF[]    = { KC_W, KC_F,     COMBO_END };
 const uint16_t PROGMEM comboRS[]    = { HM_R, HM_S,     COMBO_END };
 const uint16_t PROGMEM comboUY[]    = { KC_U, KC_Y,     COMBO_END };
-const uint16_t PROGMEM comboEI[]    = { HM_E, HM_I,     COMBO_END };
+const uint16_t PROGMEM comboEI[]    = { HM_E, KC_I,     COMBO_END };
+// const uint16_t PROGMEM comboEI[]    = { HM_E, HM_I,     COMBO_END };
 
 const uint16_t PROGMEM comboNU[]    = { HM_N, KC_U,     COMBO_END };
 const uint16_t PROGMEM comboNCOMM[] = { HM_N, KC_COMM,  COMBO_END };
@@ -37,7 +38,7 @@ enum combos {
 };
 
 enum custom_keycodes {
-    BKWD_DEL_WD = SAFE_RANGE,
+    BSWD = SAFE_RANGE,
     ACC_AIGU,
     ACC_GRAVE,
     ACC_TREMA,
@@ -59,7 +60,7 @@ enum custom_keycodes {
 combo_t key_combos[] = {
     [_ESC]      = COMBO(comboWF,    KC_ESC),
     [_TAB]      = COMBO(comboRS,    KC_TAB),
-    [_BDW]      = COMBO(comboUY,    BKWD_DEL_WD),
+    [_BDW]      = COMBO(comboUY,    BSWD),
     [_BSPC]     = COMBO(comboEI,    KC_BSPC),
     [_AIGU]     = COMBO(comboNU,    ACC_AIGU),
     [_GRAVE]    = COMBO(comboNCOMM, ACC_GRAVE),
@@ -69,8 +70,10 @@ combo_t key_combos[] = {
 };
 
 enum layers {
-    COLEMAK_DH,
-    SYMBOLS,
-    NUMPAD_AND_VIM,
+    _0,
+    _1,
+    _2,
+    _3,
+    _4,
 };
 

@@ -2,27 +2,17 @@
 #include "keymap.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [COLEMAK_DH] = LAYOUT_split_3x5_2(
+    [_0] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,             KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT,
+        KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,             KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        HM_A,    HM_R,    HM_S,    HM_T,    KC_G,             KC_M,    HM_N,    HM_E,    HM_I,    HM_O,
+        HM_A,    HM_R,    HM_S,    HM_T,    KC_G,             KC_M,    HM_N,    HM_E,    KC_I,    HM_O,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,             KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH,
 //                                |--------+--------|        |--------+--------|
-                                   OSL(2),   KC_SPC,           KC_ENT,  OSL(1)
+                                   OSL(1),  KC_SPC,           KC_ENT,  OSL(2)
     ),
-    [SYMBOLS] = LAYOUT_split_3x5_2(
-//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_TILD, KC_GRV,  KC_AMPR, KC_EXLM, KC_LCBR,          KC_RCBR, KC_BSLS, KC_PIPE, KC_PERC, KC_PLUS,
-//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_ASTR, KC_CIRC, KC_COLN, KC_SCLN, KC_LPRN,          KC_RPRN, KC_PMNS, KC_UNDS, KC_DLR,  KC_EQL,
-//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_QUES, KC_LT,   KC_GT,   KC_AT,   KC_LBRC,          KC_RBRC, KC_HASH, _______, _______, _______,
-//                                |--------+--------|        |--------+--------|
-                                   XXXXXXX,  KC_SPC,           KC_ENT, XXXXXXX
-    ),
-    [NUMPAD_AND_VIM] = LAYOUT_split_3x5_2(
+    [_1] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX,          KC_HOME, WS_LEFT, WS_RGHT, KC_END,  KC_PGUP,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
@@ -30,13 +20,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_0,    KC_1,    KC_2,    KC_3,    XXXXXXX,          W_LEFT,  W_DOWN,  W_UP,    W_RGHT,  KC_DEL,
 //                                |--------+--------|        |--------+--------|
-                                   TO(0),   KC_SPC,           XXXXXXX, TO(3)
-    )
+                                   XXXXXXX, KC_ESC,           KC_BSPC, TO(3)
+    ),
+    [_2] = LAYOUT_split_3x5_2(
+//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
+        KC_TILD, KC_GRV,  KC_AMPR, KC_EXLM, KC_LCBR,          KC_RCBR, KC_BSLS, KC_PIPE, KC_PERC, KC_PLUS,
+//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
+        KC_ASTR, KC_CIRC, KC_DQT,  KC_QUOT, KC_LPRN,          KC_RPRN, KC_PMNS, KC_UNDS, KC_DLR,  KC_EQL,
+//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
+        KC_QUES, KC_LT,   KC_GT,   KC_AT,   KC_LBRC,          KC_RBRC, KC_HASH, _______, _______, _______,
+//                                |--------+--------|        |--------+--------|
+                                   TO(4),   KC_TAB,           BSWD,    XXXXXXX
+    ),
+    [_3] = LAYOUT_split_3x5_2(
+//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, MS_UP,   XXXXXXX, XXXXXXX,          MS_ACL2, XXXXXXX, MS_BTN3, XXXXXXX, XXXXXXX,
+//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
+        XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,          MS_ACL1, MS_BTN1, MS_BTN2, XXXXXXX, XXXXXXX,
+//     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          MS_ACL0, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+//                                |--------+--------|        |--------+--------|
+                                   TO(0),   KC_TAB,           XXXXXXX, XXXXXXX
+    ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case BKWD_DEL_WD:
+        case BSWD:
             if (record->event.pressed)
                 SEND_STRING(SS_LCTL("\b"));
             return false;
