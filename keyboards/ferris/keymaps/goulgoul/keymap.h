@@ -58,10 +58,10 @@ enum custom_keycodes {
                        SS_UP(X_LEFT_GUI)
 
 combo_t key_combos[] = {
-    [_ESC]      = COMBO(comboWF,    KC_ESC),
-    [_TAB]      = COMBO(comboRS,    KC_TAB),
-    [_BDW]      = COMBO(comboUY,    BSWD),
-    [_BSPC]     = COMBO(comboEI,    KC_BSPC),
+//    [_ESC]      = COMBO(comboWF,    KC_ESC),
+//    [_TAB]      = COMBO(comboRS,    KC_TAB),
+//    [_BDW]      = COMBO(comboUY,    BSWD),
+//    [_BSPC]     = COMBO(comboEI,    KC_BSPC),
     [_AIGU]     = COMBO(comboNU,    ACC_AIGU),
     [_GRAVE]    = COMBO(comboNCOMM, ACC_GRAVE),
     [_CIRC]     = COMBO(comboLU,    ACC_TREMA),

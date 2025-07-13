@@ -10,7 +10,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,             KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH,
 //                                |--------+--------|        |--------+--------|
-                                   OSL(1),  KC_SPC,           KC_ENT,  OSL(2)
+                             LT(1, KC_TAB),  LT(3, KC_SPC),          LT(4, KC_ENT), LT(2, KC_BSPC)
     ),
     [_1] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_0,    KC_1,    KC_2,    KC_3,    XXXXXXX,          W_LEFT,  W_DOWN,  W_UP,    W_RGHT,  KC_DEL,
 //                                |--------+--------|        |--------+--------|
-                                   XXXXXXX, KC_ESC,           KC_BSPC, TO(3)
+                                   XXXXXXX, KC_ESC,           KC_ESC, TO(3)
     ),
     [_2] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
@@ -34,23 +34,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_3] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        XXXXXXX, XXXXXXX, MS_UP,   XXXXXXX, XXXXXXX,          MS_ACL2, XXXXXXX, MS_BTN3, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, MS_BTN3, XXXXXXX, XXXXXXX,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT, XXXXXXX,          MS_ACL1, MS_BTN1, MS_BTN2, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          MS_LEFT, MS_DOWN, MS_UP,   MS_RGHT, XXXXXXX,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          MS_ACL0, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //                                |--------+--------|        |--------+--------|
-                                   TO(0),   KC_TAB,           XXXXXXX, XXXXXXX
+                                   TO(0),   KC_TAB,           MS_BTN1, MS_BTN2
     ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case BSWD:
-            if (record->event.pressed)
-                SEND_STRING(SS_LCTL("\b"));
-            return false;
-
         case ACC_AIGU:
             if (record->event.pressed)
                 SEND_STRING(SS_RALT("'"));
