@@ -12,6 +12,12 @@
 #define HM_I    RALT_T(KC_I)
 #define HM_O    RGUI_T(KC_O)
 
+#define __TAB__ LT(1, KC_TAB)
+#define __SPC__ LT(3, KC_SPC)
+#define __ENT__ LT(4, KC_ENT)
+#define __BSP__ LT(2, KC_BSPC)
+
+
 const uint16_t PROGMEM comboWF[]    = { KC_W, KC_F,     COMBO_END };
 const uint16_t PROGMEM comboRS[]    = { HM_R, HM_S,     COMBO_END };
 const uint16_t PROGMEM comboUY[]    = { KC_U, KC_Y,     COMBO_END };
