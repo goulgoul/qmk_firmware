@@ -12,10 +12,10 @@
 #define HM_I    RALT_T(KC_I)
 #define HM_O    RGUI_T(KC_O)
 
-#define __TAB__ LT(1, KC_TAB)
-#define __SPC__ LT(3, KC_SPC)
-#define __ENT__ LT(4, KC_ENT)
-#define __BSP__ LT(2, KC_BSPC)
+#define ___1___ LT(1, KC_TAB)
+#define ___3___ LT(3, KC_SPC)
+#define ___4___ LT(4, KC_ENT)
+#define ___2___ LT(2, KC_BSPC)
 
 
 const uint16_t PROGMEM comboWF[]    = { KC_W, KC_F,     COMBO_END };
@@ -64,7 +64,7 @@ enum custom_keycodes {
                        SS_UP(X_LEFT_GUI)
 
 combo_t key_combos[] = {
-//    [_ESC]      = COMBO(comboWF,    KC_ESC),
+    [_ESC]      = COMBO(comboWF,    KC_ESC),
 //    [_TAB]      = COMBO(comboRS,    KC_TAB),
 //    [_BDW]      = COMBO(comboUY,    BSWD),
 //    [_BSPC]     = COMBO(comboEI,    KC_BSPC),
