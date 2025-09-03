@@ -21,14 +21,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_INTERVAL 5
 #define MOUSEKEY_MAX_SPEED 2
 #define MOUSEKEY_TIME_TO_MAX 80
-#define MOUSEKEY_DELAY 10
-#define MOUSEKEY_WHEEL_DELAY 10
+#define MOUSEKEY_DELAY 0
+#define MOUSEKEY_WHEEL_DELAY 0
 #define MOUSEKEY_WHEEL_INTERVAL 50
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 180
-#define COMBO_TERM 35
+#define COMBO_TERM 50
 /*#define PERMISSIVE_HOLD*/
 #define QUICK_TAP_TERM 0
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
