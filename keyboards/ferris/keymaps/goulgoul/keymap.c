@@ -1,4 +1,5 @@
 /**/
+// vim: colorcolumn=0
 #include "keymap.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -24,11 +25,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_2] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_TILD, KC_GRV,  KC_UNDS, KC_COLN, KC_LCBR,          KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUES,
+        KC_TILD, KC_GRV,  KC_UNDS, KC_COLN, KC_LCBR,          KC_RCBR, XXXXXXX, KC_SLSH, KC_DOT,  XXXXXXX,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_ASTR, KC_PLUS, KC_MINS, KC_SCLN, KC_LPRN,          KC_RPRN, KC_EQL,  KC_GT,   KC_LT,   KC_BSLS,
+        KC_ASTR, KC_PLUS, KC_MINS, KC_SCLN, KC_LPRN,          KC_RPRN, KC_GT,   KC_EQL,  KC_LT,   XXXXXXX,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_AT,   KC_HASH, KC_PIPE, KC_EXLM, KC_LBRC,          KC_RBRC, KC_AMPR, KC_COMM, KC_DOT,  KC_SLSH,
+        KC_AT,   KC_HASH, KC_PIPE, KC_EXLM, KC_LBRC,          KC_RBRC, KC_AMPR, KC_BSLS, KC_PERC, KC_QUES,
 //                                |--------+--------|        |--------+--------|
                                    KC_CIRC, KC_DLR,           XXXXXXX, XXXXXXX
     ),
