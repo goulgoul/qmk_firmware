@@ -18,17 +18,17 @@
 #define ___2___ LT(2, KC_BSPC)
 
 
-const uint16_t PROGMEM comboWF[]    = { KC_W, KC_F,     COMBO_END };
-const uint16_t PROGMEM comboRS[]    = { HM_R, HM_S,     COMBO_END };
-const uint16_t PROGMEM comboUY[]    = { KC_U, KC_Y,     COMBO_END };
-const uint16_t PROGMEM comboEI[]    = { HM_E, KC_I,     COMBO_END };
+const uint16_t PROGMEM comboWF[]    = { KC_W, KC_F,       COMBO_END };
+const uint16_t PROGMEM comboRS[]    = { HM_R, HM_S,       COMBO_END };
+const uint16_t PROGMEM comboUY[]    = { KC_U, KC_Y,       COMBO_END };
+const uint16_t PROGMEM comboEI[]    = { HM_E, KC_I,       COMBO_END };
 
-const uint16_t PROGMEM comboNU[]    = { HM_N, KC_U,     COMBO_END };
-const uint16_t PROGMEM comboNCOMM[] = { HM_N, KC_COMM,  COMBO_END };
-const uint16_t PROGMEM comboLU[]    = { KC_L, KC_U,     COMBO_END };
-const uint16_t PROGMEM comboNE[]    = { HM_N, HM_E,     COMBO_END };
+const uint16_t PROGMEM comboNU[]    = { HM_N, KC_U,        COMBO_END };
+const uint16_t PROGMEM comboLU[]    = { KC_L, KC_U,       COMBO_END };
+const uint16_t PROGMEM comboNCOMM[] = { HM_N, KC_COMM,    COMBO_END };
+const uint16_t PROGMEM comboHCOMM[] = { KC_H, KC_COMM,    COMBO_END };
 
-const uint16_t PROGMEM comboEH[]    = { HM_E, KC_H,     COMBO_END };
+const uint16_t PROGMEM comboEH[]    = { HM_E, KC_H,       COMBO_END };
 
 enum combos {
     _ESC,
@@ -69,8 +69,8 @@ combo_t key_combos[] = {
 //    [_BSPC]     = COMBO(comboEI,    KC_BSPC),
     [_AIGU]     = COMBO(comboNU,    ACC_AIGU),
     [_GRAVE]    = COMBO(comboNCOMM, ACC_GRAVE),
-    [_CIRC]     = COMBO(comboLU,    ACC_TREMA),
-    [_TREMA]    = COMBO(comboNE,    ACC_CIRC),
+    [_CIRC]     = COMBO(comboHCOMM, ACC_TREMA),
+    [_TREMA]    = COMBO(comboLU,    ACC_CIRC),
     [_SEDILLE]  = COMBO(comboEH,    ACC_SEDILLE)
 };
 
