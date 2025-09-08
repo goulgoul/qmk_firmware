@@ -3,7 +3,7 @@
 #include "keymap.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_0] = LAYOUT_split_3x5_2(
+    [BASE] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,             KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                |--------+--------|        |--------+--------|
                                    ___1___, ___3___,          ___4___, ___2___
     ),
-    [_1] = LAYOUT_split_3x5_2(
+    [MOVEMENT] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          KC_HOME, WS_LEFT, WS_RGHT, KC_END,  KC_PGUP,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                |--------+--------|        |--------+--------|
                                    XXXXXXX, XXXXXXX,          KC_ENT,  KC_DEL
     ),
-    [_2] = LAYOUT_split_3x5_2(
+    [SYMBOLS] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_TILD, KC_GRV,  KC_UNDS, KC_COLN, KC_LCBR,          KC_RCBR, XXXXXXX, KC_SLSH, KC_DOT,  XXXXXXX,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                |--------+--------|        |--------+--------|
                                    KC_CIRC, KC_DLR,           XXXXXXX, XXXXXXX
     ),
-    [_3] = LAYOUT_split_3x5_2(
+    [MOUSE] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_VOLU,          XXXXXXX, MS_WHLD, MS_WHLU, XXXXXXX, XXXXXXX,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                |--------+--------|        |--------+--------|
                                    XXXXXXX, XXXXXXX,          MS_BTN1, MS_BTN2
     ),
-    [_4] = LAYOUT_split_3x5_2(
+    [NUMBERS] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|       |--------+--------+--------+--------+--------|
         KC_MINS, KC_7,    KC_8,    KC_9,    KC_PLUS,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //     |--------+--------+--------+--------+--------|       |--------+--------+--------+--------+--------|

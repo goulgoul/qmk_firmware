@@ -75,10 +75,10 @@ combo_t key_combos[] = {
 };
 
 enum layers {
-    _0,
-    _1,
-    _2,
-    _3,
-    _4,
+    BASE,
+    MOVEMENT,
+    SYMBOLS,
+    MOUSE,
+    NUMBERS,
 };
 
