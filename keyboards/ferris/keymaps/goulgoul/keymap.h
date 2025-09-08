@@ -63,6 +63,11 @@ enum custom_keycodes {
                        SS_DOWN(dir_key)    \
                        SS_UP(dir_key)      \
                        SS_UP(X_LEFT_GUI)
+#define LCTL_STR(key)  SS_DOWN(X_LEFT_CTRL) \
+                       SS_DOWN(key) \
+                       SS_UP(key) \
+                       SS_UP(X_LEFT_CTRL)
+
 
 combo_t key_combos[] = {
     [_ESC]      = COMBO(comboWF,    KC_ESC),

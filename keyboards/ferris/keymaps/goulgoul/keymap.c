@@ -114,12 +114,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case ZOOM_IN:
             if (record->event.pressed)
-                SEND_STRING(SS_LCTL(X_MS_WH_UP));
+                SEND_STRING(LCTL_STR(X_MS_WH_UP));
             return false;
 
         case ZOOM_OUT:
             if (record->event.pressed)
-                SEND_STRING(SS_LCTL(X_MS_WH_DOWN));
+                SEND_STRING(LCTL_STR(X_MS_WH_DOWN));
             return false;
     }
 
