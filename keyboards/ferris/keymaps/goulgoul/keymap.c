@@ -45,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [NUMBERS] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|       |--------+--------+--------+--------+--------|
-        KC_MINS, KC_7,    KC_8,    KC_9,    KC_PLUS,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_SLSH, KC_7,    KC_8,    KC_9,    KC_MINS,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //     |--------+--------+--------+--------+--------|       |--------+--------+--------+--------+--------|
-        KC_SLSH, KC_4,    KC_5,    KC_6,    KC_ASTR,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        KC_ASTR, KC_4,    KC_5,    KC_6,    KC_PLUS,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //     |--------+--------+--------+--------+--------|       |--------+--------+--------+--------+--------|
         KC_0,    KC_1,    KC_2,    KC_3,    KC_DOT,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 //                                |--------+--------|       |--------+--------|
