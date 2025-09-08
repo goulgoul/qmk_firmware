@@ -54,7 +54,9 @@ enum custom_keycodes {
     W_LEFT,
     W_DOWN,
     W_UP,
-    W_RGHT
+    W_RGHT,
+    ZOOM_IN,
+    ZOOM_OUT
 };
 
 #define W_STR(dir_key) SS_DOWN(X_LEFT_GUI) \

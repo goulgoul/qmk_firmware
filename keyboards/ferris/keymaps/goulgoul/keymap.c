@@ -35,9 +35,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [MOUSE] = LAYOUT_split_3x5_2(
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_VOLU,          XXXXXXX, MS_WHLD, MS_WHLU, XXXXXXX, XXXXXXX,
+        KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_VOLU,          MS_WHLL, MS_WHLD, MS_WHLU, MS_WHLR, ZOOM_OUT,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
-        KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_VOLD,          MS_LEFT, MS_DOWN, MS_UP,   MS_RGHT, XXXXXXX,
+        KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_VOLD,          MS_LEFT, MS_DOWN, MS_UP,   MS_RGHT, ZOOM_IN,
 //     |--------+--------+--------+--------+--------|        |--------+--------+--------+--------+--------|
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_MUTE,          XXXXXXX, MS_BTN3, XXXXXXX, XXXXXXX, XXXXXXX,
 //                                |--------+--------|        |--------+--------|
@@ -110,6 +110,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case WS_RGHT:
             if (record->event.pressed)
                 SEND_STRING(SS_LCTL(W_STR(X_RIGHT)));
+            return false;
+
+        case ZOOM_IN:
+            if (record->event.pressed)
+                SEND_STRING(SS_LCTL(X_MS_WH_UP));
+            return false;
+
+        case ZOOM_OUT:
+            if (record->event.pressed)
+                SEND_STRING(SS_LCTL(X_MS_WH_DOWN));
             return false;
     }
 
