@@ -24,7 +24,7 @@ const uint16_t PROGMEM comboUY[]    = { KC_U, KC_Y,       COMBO_END };
 const uint16_t PROGMEM comboEI[]    = { HM_E, HM_I,       COMBO_END };
 
 const uint16_t PROGMEM comboNU[]    = { HM_N, KC_U,       COMBO_END };
-const uint16_t PROGMEM comboLU[]    = { KC_L, KC_U,       COMBO_END };
+const uint16_t PROGMEM comboKH[]    = { KC_K, KC_H,       COMBO_END };
 const uint16_t PROGMEM comboNCOMM[] = { HM_N, KC_COMM,    COMBO_END };
 const uint16_t PROGMEM comboHCOMM[] = { KC_H, KC_COMM,    COMBO_END };
 
@@ -77,7 +77,7 @@ combo_t key_combos[] = {
     [_AIGU]     = COMBO(comboNU,    ACC_AIGU),
     [_GRAVE]    = COMBO(comboNCOMM, ACC_GRAVE),
     [_CIRC]     = COMBO(comboHCOMM, ACC_CIRC),
-    [_TREMA]    = COMBO(comboLU,    ACC_TREMA),
+    [_TREMA]    = COMBO(comboKH,    ACC_TREMA),
     [_SEDILLE]  = COMBO(comboEH,    ACC_SEDILLE)
 };
 
